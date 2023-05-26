@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PortfolioWeb</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  
+      <!--Firebase-->
+  <script type="module">
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+	import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+
+	//autenticacion
+	import { initializeApp } from "firebase/app";
+	import { getAuth } from "firebase/auth";
+
+	// TODO: Replace the following with your app's Firebase project configuration
+	// See: https://firebase.google.com/docs/web/learn-more#config-object
+	const firebaseConfig = {
+  	// ...
+	};
+
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+
+
+	// Initialize Firebase Authentication and get a reference to the service
+	const auth = getAuth(app);
+
+	//cloud firestore
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+  
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAR67UwPQw1IHju4d3UU4wWQ2vP2EyqVCE",
+	  authDomain: "prueba-368af.firebaseapp.com",
+	  projectId: "prueba-368af",
+	  storageBucket: "prueba-368af.appspot.com",
+	  messagingSenderId: "768282868682",
+	  appId: "1:768282868682:web:708824942e0df68c606d33",
+	  measurementId: "G-E65NB0QNPK"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
+  </script>
+
+   <script>
+  
+    //edicion del aspecto del programa
+		const btn = document.getElementById("colores");
+		const btndos = document.getElementById("letras");
+		const cambio = document.getElementsByClassName("container-sm");
+		const container = document.getElementsByClassName("container");
+		//const container = document.querySelectorAll(".container");
+
+		function random(number) {
+			return Math.floor(Math.random() * (number + 1));
+		}
+
+		btn.addEventListener("click", () => {
+		const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+			//document.body.style.backgroundColor = rndCol;
+			for(let i=0; i< cambio.length; i++) {
+				cambio[i].style.backgroundColor = rndCol;
+			}			
+		});
+		
+		btndos.addEventListener("click", () => {
+		const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+			//document.body.style.backgroundColor = rndCol;
+			for(let i=0; i< container.length; i++) {
+				container[i].style.color = rndCol;
+			}
+			
+		});
+                                       
+  </script>
+</body>
+</html>
